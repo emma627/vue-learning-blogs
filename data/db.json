@@ -22,7 +22,7 @@
       },
       {
         "id": 3,
-        "title": "ReacT vs Vue: Comparision",
+        "title": "React vs Vue: Comparision",
         "content": "This is simple. With a single script tag, you’re up and running. The advantage of using Vue features is that it can be used without learning any new technologies.Two way binding in Vue.js is quite simple when you use v-model. In React it’s a long way down.In this case, Vue wins with fewer lines and simplified codes.Vue vs React: What these examples mean is that Vue.js is easy to learn and can be immediately productive. provides a path to simplicity with new tools and patterns for managing large codebases. Vue.js can scale up with your knowledge so that you can start to learn the updated tools and best practices.",
         "tags": [
           "css",
