@@ -1,38 +1,48 @@
 <template>
   <div class="SingleBlog">
-    <router-link :to="{ name: 'Details', params:{ id:blog.id}}">
-    <h2>{{ blog.title }}</h2>
+    <router-link :to="{ name: 'Details', params: { id: blog.id } }">
+      <h2>{{ blog.title }}</h2>
     </router-link>
     <p>{{ snippet }}</p>
+    <div class="tagsGroup">
+      <div v-for="tag in blog.tags" :key="tag" class="tagsCreated">
+        #{{ tag }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
+import { computed } from "@vue/runtime-core";
 export default {
-  name:"SingleBlog",
+  name: "SingleBlog",
   props: ["blog"],
-  setup(props){
-  const snippet = computed ( ()=>{
-return props.blog.content.substring(0,180) + "[...]"
-  })
-  return { snippet }
-}
-}
-
+  setup(props) {
+    const snippet = computed(() => {
+      return props.blog.content.substring(0, 180) + "[...]";
+    });
+    return { snippet };
+  },
+};
 </script>
 
 <style>
 .SingleBlog {
-  margin: 50px 180px;
+  margin: 50px;
+  background-color: wheat;
+  padding: 10px;
+  border-radius: 0.9%;
+  box-shadow: 1px -1px 5px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -1px 5px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 5px -3px rgba(0, 0, 0, 0.75);
 }
-.SingleBlog a{
-text-decoration: none;
-color:steelblue;
-font-size:20px;
+.SingleBlog a {
+  text-decoration: none;
+  color: steelblue;
+  font-size: 20px;
 }
-.SingleBlog a:hover{
-  color:tan;
+.SingleBlog a:hover {
+  color: teal;
 }
 
 h2:before,
