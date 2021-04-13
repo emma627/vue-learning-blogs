@@ -39,10 +39,10 @@ h2:before,
 h2:after {
   content: "";
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   position: relative;
-  top: 20px;
+  top: 15px;
   background: url(https://www.flaticon.com/svg/vstatic/svg/876/876019.svg?token=exp=1618260993~hmac=6dac0418d521b5861c073ac4a5dcfade);
   background-size: 100%;
 }

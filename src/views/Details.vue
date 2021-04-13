@@ -10,14 +10,14 @@
 
 <script>
 import getBlog from "@/composables/getBlog";
-
+import { useRoute } from "vue-router";
 
 export default {
   name: "Details",
-  props: ["id"],
-  setup(props) {
-  
-    const { blog, error, loadBlog } = getBlog(props.id)
+
+  setup() {
+    const route = useRoute();
+    const { blog, error, loadBlog } = getBlog(route.params.id);
 
     loadBlog();
     return { blog, error };
@@ -26,12 +26,11 @@ export default {
 </script>
 
 <style scoped>
-
-.Details{
-margin:50px 180px;
+.Details {
+  margin: 50px 180px;
 }
-h2{
-    color:steelblue;
-    font-size: 30px;
+h2 {
+  color: steelblue;
+  font-size: 30px;
 }
 </style>
