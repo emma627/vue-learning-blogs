@@ -1,22 +1,54 @@
 <template>
-  <form class="form">
+  <form @submit.prevent="handleSubmit" class="form">
     <div class="layoutForm">
       <label class="title" for="title">Title:</label>
-      <input type="text" name="title" id="name" required />
+      <input type="text" name="title" id="name" v-model="title" required />
     </div>
     <div class="layoutForm">
       <label class="content" for="content">Content:</label>
-      <textarea id="content" name="content" required/>
+      <textarea id="content" name="content" v-model="content" required />
     </div>
     <div class="layoutForm">
-      <label class="tags" for="tags">Tags: (press enter to add a tag)</label>
-      <input id="tags" name="tags" required/>
+      <label class="tags" for="tags">Tags: press enter to add a tag</label>
+      <input
+        id="tags"
+        name="tags"
+        v-model="tags"
+        @keydown.enter.prevent="handleKeyDown"
+      />
     </div>
+    <button>Submit</button>
   </form>
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+export default {
+  name: "Create",
+  setup() {
+    let title = ref("");
+    let content = ref("");
+    let tags = ref([]);
+
+    const router = useRouter();
+    let handleSubmit = async () => {
+      let newBlog = {
+        title: title.value,
+        content: title.value,
+        tags: tags.value,
+      };
+      await fetch("http://localhost:5000/blogs", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(newBlog),
+      });
+      router.push({ name: "Home" });
+    };
+
+    return { title, content, tags, handleSubmit };
+  },
+};
 </script>
 
 <style scoped>
@@ -28,7 +60,7 @@ export default {};
 .layoutForm {
   display: flex;
   flex-direction: column;
-  margin: 25px auto;
+  margin: 10px auto;
 }
 
 label {
@@ -36,14 +68,14 @@ label {
   color: seagreen;
   font-weight: bold;
 }
-input{
+input {
   width: 400px;
-  height:40px;
+  height: 40px;
   font-size: 22px;
 }
-textarea{
-  width:600px;
-  height:300px;
+textarea {
+  width: 600px;
+  height: 300px;
   font-size: 18px;
 }
 .title::before {
@@ -78,7 +110,15 @@ textarea{
   background: url(https://www.flaticon.com/svg/vstatic/svg/4143/4143584.svg?token=exp=1618321215~hmac=fcef2c60bb384064206b3dccd704ea5e);
   background-size: 100%;
 }
-.tags{
-  font-size:25px ;
+.tags {
+  font-size: 25px;
+}
+button {
+  height: 50px;
+  width: 110px;
+  margin: 15px auto;
+  background-color: seagreen;
+  border-color: transparent;
+  font-size: 20px;
 }
 </style>

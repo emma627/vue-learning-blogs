@@ -1,65 +1,64 @@
 {
-    "blogs": [
-      {
-        "id": 1,
-        "title": "What is VueJS?",
-        "content": "Vue.js is frontend JavaScript framework for building user interfaces with a focus on single-page applications. It promotes “high decoupling” which makes it really easy for developers to create user interfaces and rapid prototyping.",
-        "tags": [
-          "webdev",
-          "coding",
-          "news"
-        ]
-      },
-      {
-        "id": 2,
-        "title": "VUE vs Angular: Comparision",
-        "content": "While comparing Vue vs Angular, let us first declare that Angular (mostly after the release of Angular 2!!) is a mammoth and Vue.js is the tiger hungry enough to become big soon. However, there are many reasons for which developers are switching to Vue.Vue.js is a more flexible, less opinionated solution ( than Angular ). That allows you to structure your app the way you want it to be, instead of being forced to do everything the Angular way. It’s only an interface layer so you can use it as a light feature in pages instead of a full blown SPA.There are many tools in Angularjs and so many complex syntax that it can confuse you sometimes. On the other hand,  Vue.js is much simpler than Angular and sometimes even better. If you are concerned about the future of this framework, we suggest not to be. This is going to stay for long and no way to fade in the upcoming two years. However, you can consult or hire angularjs developer that is also a great idea to clear all your doubts.",
-        "tags": [
-          "css",
-          "webdev",
-          "coding"
-        ]
-      },
-      {
-        "id": 3,
-        "title": "React vs Vue: Comparision",
-        "content": "This is simple. With a single script tag, you’re up and running. The advantage of using Vue features is that it can be used without learning any new technologies.Two way binding in Vue.js is quite simple when you use v-model. In React it’s a long way down.In this case, Vue wins with fewer lines and simplified codes.Vue vs React: What these examples mean is that Vue.js is easy to learn and can be immediately productive. provides a path to simplicity with new tools and patterns for managing large codebases. Vue.js can scale up with your knowledge so that you can start to learn the updated tools and best practices.",
-        "tags": [
-          "css",
-          "webdev",
-          "coding"
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Angular vs React vs Vue: Who wins? (1)",
-        "content": "Angular is the most mature of the frameworks, has good backing in terms of contributors and is a complete package.However, the learning curve is steep and concepts of development in Angular may put off new developers.Angular is a good choice for companies with large teams and developers who already use TypeScript.",
-        "tags": [
-          "vue",
-          "coding",
-          "webdev"
-        ]
-      },
-      {
-        "id": 5,
-        "title": "Angular vs React vs Vue: Who wins? (2)",
-        "content": "React is just old enough to be mature and has a huge number of contributions from the community. It has gained widespread acceptance. The job market for React is really good, and the future for this framework looks bright.React looks like a good choice for someone getting started with front-end JavaScript frameworks, startups and developers who like some flexibility. The ability to integrate with other frameworks seamlessly gives it a great advantage for those who would like some flexibility in their code.",
-        "tags": [
-          "vue",
-          "coding",
-          "webdev"
-        ]
-      },
-      {
-        "id": 6,
-        "title": "Angular vs React vs Vue: Who wins? (3)",
-        "content": "Vue is newest to the arena, without the backing of a major company.However, it has done really well in the last few years to come out as a strong competitor for Angular and React, and especially so with the release of Vue 3.0. This is perhaps playing a role with a lot of Chinese giants like Alibaba and Baidu picking Vue as their primary front-end JavaScript framework. Vue should be your choice if you prefer simplicity, but also like flexibility.",
-        "tags": [
-          "vue",
-          "coding",
-          "webdev"
-        ]
-      }
-
-    ]
-  }
+  "blogs": [
+    {
+      "id": 1,
+      "title": "What is VueJS?",
+      "content": "Vue.js is frontend JavaScript framework for building user interfaces with a focus on single-page applications. It promotes “high decoupling” which makes it really easy for developers to create user interfaces and rapid prototyping.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "VUE vs Angular: Comparision",
+      "content": "While comparing Vue vs Angular, let us first declare that Angular (mostly after the release of Angular 2!!) is a mammoth and Vue.js is the tiger hungry enough to become big soon. However, there are many reasons for which developers are switching to Vue.Vue.js is a more flexible, less opinionated solution ( than Angular ). That allows you to structure your app the way you want it to be, instead of being forced to do everything the Angular way. It’s only an interface layer so you can use it as a light feature in pages instead of a full blown SPA.There are many tools in Angularjs and so many complex syntax that it can confuse you sometimes. On the other hand,  Vue.js is much simpler than Angular and sometimes even better. If you are concerned about the future of this framework, we suggest not to be. This is going to stay for long and no way to fade in the upcoming two years. However, you can consult or hire angularjs developer that is also a great idea to clear all your doubts.",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "React vs Vue: Comparision",
+      "content": "This is simple. With a single script tag, you’re up and running. The advantage of using Vue features is that it can be used without learning any new technologies.Two way binding in Vue.js is quite simple when you use v-model. In React it’s a long way down.In this case, Vue wins with fewer lines and simplified codes.Vue vs React: What these examples mean is that Vue.js is easy to learn and can be immediately productive. provides a path to simplicity with new tools and patterns for managing large codebases. Vue.js can scale up with your knowledge so that you can start to learn the updated tools and best practices.",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Angular vs React vs Vue: Who wins? (1)",
+      "content": "Angular is the most mature of the frameworks, has good backing in terms of contributors and is a complete package.However, the learning curve is steep and concepts of development in Angular may put off new developers.Angular is a good choice for companies with large teams and developers who already use TypeScript.",
+      "tags": [
+        "vue",
+        "coding",
+        "webdev"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Angular vs React vs Vue: Who wins? (2)",
+      "content": "React is just old enough to be mature and has a huge number of contributions from the community. It has gained widespread acceptance. The job market for React is really good, and the future for this framework looks bright.React looks like a good choice for someone getting started with front-end JavaScript frameworks, startups and developers who like some flexibility. The ability to integrate with other frameworks seamlessly gives it a great advantage for those who would like some flexibility in their code.",
+      "tags": [
+        "vue",
+        "coding",
+        "webdev"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Angular vs React vs Vue: Who wins? (3)",
+      "content": "Vue is newest to the arena, without the backing of a major company.However, it has done really well in the last few years to come out as a strong competitor for Angular and React, and especially so with the release of Vue 3.0. This is perhaps playing a role with a lot of Chinese giants like Alibaba and Baidu picking Vue as their primary front-end JavaScript framework. Vue should be your choice if you prefer simplicity, but also like flexibility.",
+      "tags": [
+        "vue",
+        "coding",
+        "webdev"
+      ]
+    }
+  ]
+}
