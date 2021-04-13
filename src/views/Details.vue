@@ -1,15 +1,15 @@
 <template>
   <div class="Details">
     <div v-if="error">{{ error }}</div>
-    <div v-if="blog">
-      <h2>{{ blog.title }}</h2>
-      <p>{{ blog.content }}</p>
+    <div v-if="post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import getBlog from "@/composables/getBlog";
+import getPost from "@/composables/getPost";
 import { useRoute } from "vue-router";
 
 export default {
@@ -17,10 +17,10 @@ export default {
 
   setup() {
     const route = useRoute();
-    const { blog, error, loadBlog } = getBlog(route.params.id);
+    const { post, error, loadPost } = getPost(route.params.id);
 
-    loadBlog();
-    return { blog, error };
+    loadPost();
+    return { post, error };
   },
 };
 </script>

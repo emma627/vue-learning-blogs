@@ -2,32 +2,32 @@
   <div class="layoutHome">
     <div class="home">
       <div v-if="error">{{ error }}</div>
-      <div v-if="blogs.length">
-        <BlogsList :blogs="blogs" />
+      <div v-if="posts.length">
+        <PostsList :posts="posts" />
       </div>
     </div>
     <div class="allTagsBeside">
-<AllTags />
+<AllTags :posts="posts"/>
     </div>
   </div>
 </template>
 
 <script>
-import getBlogs from "../composables/getBlogs";
-import BlogsList from "../components/BlogsList";
+import getPosts from "../composables/getPosts";
+import PostsList from "../components/PostsList";
 import AllTags from "../components/AllTags";
 
 export default {
   name: "Home",
   components: {
-    BlogsList,AllTags
+    PostsList,AllTags
   },
   setup() {
-    const { blogs, error, loadBlogs } = getBlogs();
+    const { posts, error, loadPosts } = getPosts();
 
-    loadBlogs();
-    console.log(blogs);
-    return { blogs, error };
+    loadPosts();
+    console.log(posts);
+    return { posts, error };
   },
 };
 </script>

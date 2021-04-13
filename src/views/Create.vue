@@ -39,15 +39,15 @@ export default {
 
     const router = useRouter();
     let handleSubmit = async () => {
-      let newBlog = {
+      let newPost = {
         title: title.value,
         content: title.value,
         tags: tags.value,
       };
-      await fetch("http://localhost:5000/blogs", {
+      await fetch("http://localhost:5000/posts", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(newBlog),
+        body: JSON.stringify(newPost),
       });
       router.push({ name: "Home" });
     };

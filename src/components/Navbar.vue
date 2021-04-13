@@ -1,9 +1,9 @@
 <template>
   <div class="nav-bar">
-      <h1>My Javascript Frameworks Blogs</h1>
+      <h1>My Javascript Frameworks Blog</h1>
       <nav class="nav">
        <router-link :to="{ name : 'Home'}">Home</router-link>
-       <router-link :to="{ name : 'Create'}">Create a blog</router-link>
+       <router-link :to="{ name : 'Create'}">Create a Post</router-link>
        
       </nav>
   </div>

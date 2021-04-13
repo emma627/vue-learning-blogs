@@ -1,11 +1,11 @@
 <template>
-  <div class="SingleBlog">
-    <router-link :to="{ name: 'Details', params: { id: blog.id } }">
-      <h2>{{ blog.title }}</h2>
+  <div class="SinglePost">
+    <router-link :to="{ name: 'Details', params: { id: post.id } }">
+      <h2>{{ post.title }}</h2>
     </router-link>
     <p>{{ snippet }}</p>
     <div class="tagsGroup">
-      <div v-for="tag in blog.tags" :key="tag" class="tagsCreated">
+      <div v-for="tag in post.tags" :key="tag" class="tagsCreated">
         #{{ tag }}
       </div>
     </div>
@@ -15,11 +15,11 @@
 <script>
 import { computed } from "@vue/runtime-core";
 export default {
-  name: "SingleBlog",
-  props: ["blog"],
+  name: "SinglePost",
+  props: ["post"],
   setup(props) {
     const snippet = computed(() => {
-      return props.blog.content.substring(0, 180) + "[...]";
+      return props.post.content.substring(0, 180) + "[...]";
     });
     return { snippet };
   },
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-.SingleBlog {
+.SinglePost {
   margin: 50px;
   background-color: wheat;
   padding: 10px;
@@ -36,12 +36,12 @@ export default {
   -webkit-box-shadow: 1px -1px 5px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px -1px 5px -3px rgba(0, 0, 0, 0.75);
 }
-.SingleBlog a {
+.SinglePost a {
   text-decoration: none;
   color: steelblue;
   font-size: 20px;
 }
-.SingleBlog a:hover {
+.SinglePost a:hover {
   color: teal;
 }
 
