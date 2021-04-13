@@ -13,9 +13,14 @@
       <input
         id="tags"
         name="tags"
-        v-model="tags"
+        v-model="tag"
         @keydown.enter.prevent="handleKeyDown"
       />
+    </div>
+    <div class="tagsGroup">
+    <div v-for="tag in tags" :key="tag" class="tagsCreated">
+      #{{ tag }}
+      </div>
     </div>
     <button>Submit</button>
   </form>
@@ -29,6 +34,7 @@ export default {
   setup() {
     let title = ref("");
     let content = ref("");
+    let tag = ref("");
     let tags = ref([]);
 
     const router = useRouter();
@@ -45,8 +51,14 @@ export default {
       });
       router.push({ name: "Home" });
     };
-
-    return { title, content, tags, handleSubmit };
+    let handleKeyDown = () => {
+      if (!tags.value.includes(tag.value)) {
+        tag.value.replace(/\s/, "");
+        tags.value.push(tag.value);
+      }
+      tag.value = "";
+    };
+    return { title, content, tag, tags, handleSubmit, handleKeyDown };
   },
 };
 </script>
@@ -55,7 +67,7 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  margin: 5px 10px 180px;
+  margin: 0 10px 180px;
 }
 .layoutForm {
   display: flex;
@@ -112,6 +124,26 @@ textarea {
 }
 .tags {
   font-size: 25px;
+}
+.tagsGroup{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+.tagsCreated {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:auto;
+  margin:10px;
+  height: 50px;
+  width: 110px;
+  background-color: tomato;
+  color: white;
+  border-radius: 1.5rem;
+  font-size: 20px;
+  font-weight: bold;
 }
 button {
   height: 50px;
