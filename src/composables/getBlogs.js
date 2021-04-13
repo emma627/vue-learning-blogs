@@ -8,7 +8,7 @@ const getBlogs = () => {
     try {
       const res = await fetch("http://localhost:5000/blogs");
       if (!res.ok) {
-        throw error("no blogs available!");
+        throw Error("no blogs available!");
       }
       blogs.value = await res.json();
     } catch (err) {

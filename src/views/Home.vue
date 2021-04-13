@@ -1,23 +1,27 @@
 <template>
   <div class="home">
-   <BlogsList :blogs="blogs"/>
+    <div v-if="error">{{ error }}</div>
+    <div v-if="blogs.length">
+      <BlogsList :blogs="blogs" />
+    </div>
   </div>
 </template>
 
 <script>
-import getBlogs from "../composables/getBlogs"
-import BlogsList from "../components/BlogsList"
+
+import getBlogs from "../composables/getBlogs";
+import BlogsList from "../components/BlogsList";
 export default {
   name: "Home",
   components: {
-   BlogsList,
+    BlogsList,
   },
-  setup(){
-    const {blogs, error,loadBlogs}=getBlogs()
+  setup() {
+    const { blogs, error, loadBlogs } = getBlogs();
 
-    loadBlogs()
-    console.log(blogs)
-    return {blogs,error}
-  }
+    loadBlogs();
+    console.log(blogs);
+    return { blogs, error };
+  },
 };
 </script>
