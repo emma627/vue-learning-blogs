@@ -5,16 +5,18 @@
       <h2>{{ post.title }}</h2>
       <p>{{ post.content }}</p>
     </div>
+  
   </div>
 </template>
 
 <script>
+
 import getPost from "@/composables/getPost";
 import { useRoute } from "vue-router";
 
 export default {
   name: "Details",
-
+ 
   setup() {
     const route = useRoute();
     const { post, error, loadPost } = getPost(route.params.id);

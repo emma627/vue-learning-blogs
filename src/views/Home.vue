@@ -1,13 +1,13 @@
 <template>
-  <div class="layoutHome">
-    <div class="home">
-      <div v-if="error">{{ error }}</div>
-      <div v-if="posts.length">
+  <div class="Home">
+    <div v-if="error">{{ error }}</div>
+    <div v-if="posts.length" class="layoutOfTwo">
+      <div>
         <PostsList :posts="posts" />
       </div>
-    </div>
-    <div class="allTagsBeside">
-      <AllTags :posts="posts" />
+      <div class="allTagsBeside">
+        <AllTags :posts="posts" />
+      </div>
     </div>
   </div>
 </template>
@@ -33,8 +33,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.layoutHome {
+<style>
+.layoutOfTwo {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }

@@ -18,9 +18,7 @@
       />
     </div>
     <div class="tagsGroup">
-    <div v-for="tag in tags" :key="tag" class="tagsCreated">
-      #{{ tag }}
-      </div>
+      <div v-for="tag in tags" :key="tag" class="tagsCreated">#{{ tag }}</div>
     </div>
     <button>Submit</button>
   </form>
@@ -38,26 +36,27 @@ export default {
     let tags = ref([]);
 
     const router = useRouter();
-    let handleSubmit = async () => {
-      let newPost = {
-        title: title.value,
-        content: title.value,
-        tags: tags.value,
-      };
-      await fetch("http://localhost:5000/posts", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(newPost),
-      });
-      router.push({ name: "Home" });
-    };
-    let handleKeyDown = () => {
+    const handleKeyDown = () => {
       if (!tags.value.includes(tag.value)) {
         tag.value.replace(/\s/, "");
         tags.value.push(tag.value);
       }
       tag.value = "";
     };
+    const handleSubmit = async () => {
+      let newPost = {
+        title: title.value,
+        content: content.value,
+        tags: tags.value,
+      };
+      await fetch("http://localhost:5000/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newPost),
+      });
+      router.push({ name: "Home" });
+    };
+
     return { title, content, tag, tags, handleSubmit, handleKeyDown };
   },
 };
@@ -125,18 +124,17 @@ textarea {
 .tags {
   font-size: 25px;
 }
-.tagsGroup{
-  display:flex;
+.tagsGroup {
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  
 }
 .tagsCreated {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding:auto;
-  margin:10px;
+  padding: auto;
+  margin: 10px;
   height: 50px;
   width: 110px;
   background-color: tomato;

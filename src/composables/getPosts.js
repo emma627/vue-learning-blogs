@@ -1,21 +1,24 @@
-import { ref } from "vue";
+import { ref } from 'vue'
 
 const getPosts = () => {
-  const posts = ref([]);
-  const error = ref(null);
+
+  const posts = ref([])
+  const error = ref(null)
 
   const loadPosts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/posts");
-      if (!res.ok) {
-        throw Error("no posts available!");
+      let data = await fetch('http://localhost:5000/posts')
+      if(!data.ok) {
+        throw Error('no available data')
       }
-      posts.value = await res.json();
-    } catch (err) {
-      error.value = err.message;
+      posts.value = await data.json()
     }
-  };
-  return { posts, error, loadPosts };
-};
+    catch(err) {
+      error.value = err.message
+    }
+  }
 
-export default getPosts;
+  return { posts, error, loadPosts }
+}
+
+export default getPosts

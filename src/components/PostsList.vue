@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 import SinglePost from "./SinglePost";
 export default {
   name: "PostsList",
