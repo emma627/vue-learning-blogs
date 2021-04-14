@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="allTagsBeside">
-<AllTags :posts="posts"/>
+      <AllTags :posts="posts" />
     </div>
   </div>
 </template>
@@ -20,7 +20,8 @@ import AllTags from "../components/AllTags";
 export default {
   name: "Home",
   components: {
-    PostsList,AllTags
+    PostsList,
+    AllTags,
   },
   setup() {
     const { posts, error, loadPosts } = getPosts();
@@ -33,12 +34,11 @@ export default {
 </script>
 
 <style scoped>
-.layoutHome{
-  display:grid;
-   grid-template-columns: 3fr 1fr;
-
+.layoutHome {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
-.allTags{
-  margin:40px;
+.allTags {
+  margin: 40px;
 }
 </style>
